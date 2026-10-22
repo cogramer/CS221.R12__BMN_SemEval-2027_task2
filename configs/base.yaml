@@ -1,0 +1,31 @@
+# Siêu tham số chung. Mỗi E*.yaml chỉ ghi đè phần khác biệt.
+# CẢNH BÁO: không sửa file này sau khi đã có kết quả; cần đổi thì tạo biến thể mới.
+
+model:
+  name: microsoft/deberta-v3-base
+  num_labels: 4            # thứ tự nhãn nằm trong src/model/labels.py, không đặt ở đây
+
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  max_length: 64
+
+train:
+  seeds: [42, 43, 44]
+  epochs: 5
+  batch_size: 16           # số cặp gốc mỗi batch; khi có đảo cặp thì thành 32 mẫu
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  max_grad_norm: 1.0
+  fp16: true
+  deterministic: true      # cudnn.benchmark luôn tắt
+
+method:
+  augment_reverse: false           # E1, E4, E5-E7, E8 bật
+  symmetrize_inference: false      # E2, E4, E5-E7, E8 bật
+  consistency_loss: false          # E3, E5-E7 bật
+  consistency_lambda: 0.0          # E5=0.5, E6=1.0, E7=0.1
+
+output:
+  results_dir: results
