@@ -1,0 +1,47 @@
+# Dữ liệu gốc: KHÔNG commit (giữ thư mục bằng .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+
+# Dữ liệu đã đảo cặp: sinh lại bằng script
+data/processed/*
+!data/processed/.gitkeep
+
+# Checkpoint mô hình
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+results/**/checkpoint*/
+results/**/best_model/
+
+# Bí mật
+.env
+*.key
+secrets*
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
+
+# Colab / IDE / hệ điều hành
+.vscode/
+.idea/
+.DS_Store
+wandb/
+
+# LaTeX build
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+paper/*.bbl
+paper/*.blg
+
+# LƯU Ý: không ignore metrics.json, predictions.csv, probs.npy,
+# config_used.yaml, log.txt và file TEST_UNLOCKED.
