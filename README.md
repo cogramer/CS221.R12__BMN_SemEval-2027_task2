@@ -8,6 +8,11 @@ augmentation đảo cặp.
 
     git clone <url-repo> && cd CS221.R12__BMN_SemEval-2027_task2
     pip install -r requirements.txt
+    
+
+```sh
+Python 3.13 (Colab)
+```
 
 ## Dữ liệu
 
@@ -21,6 +26,7 @@ Sinh dữ liệu đảo cặp vào `data/processed/` bằng script trong `src/da
     bash scripts/run_seed.sh configs/E5.yaml 42 --verify   # kiểm tra tái lập
     bash scripts/run_sweep.sh                       # mọi cấu hình x seed (42, 43, 44)
     python scripts/aggregate.py                     # bảng tổng hợp
+    
 
 Kết quả: `results/<cấu_hình>/seed_<n>/` (`metrics.json`, `predictions.csv`,
 `probs.npy`, `config_used.yaml`, `log.txt`).
