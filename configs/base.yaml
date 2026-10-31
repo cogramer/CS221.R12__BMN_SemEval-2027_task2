@@ -8,6 +8,10 @@ model:
 data:
   raw_dir: data/raw
   processed_dir: data/processed
+  track: track1
+  expected_rows:           # số dòng mỗi split, dùng cho scripts/check_data.py
+    train: 3042
+    dev: 660
   max_length: 64
 
 train:
